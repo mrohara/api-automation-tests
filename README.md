@@ -1,6 +1,6 @@
-# 🐶 Automação de Testes de API - Dog API
+# Automação de Testes de API - Dog API
 
-## 📌 Visão Geral
+## Visão Geral
 
 Este projeto consiste em um framework de automação de testes de API desenvolvido para validar os endpoints da Dog API.
 
@@ -15,7 +15,7 @@ O projeto foi desenvolvido seguindo boas práticas de automação, priorizando l
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * Java 17
 * Maven
@@ -26,7 +26,7 @@ O projeto foi desenvolvido seguindo boas práticas de automação, priorizando l
 
 ---
 
-## 🧱 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 src
@@ -49,7 +49,7 @@ src
 
 ---
 
-## ⚙️ Configuração
+## Configuração
 
 O projeto suporta execução por ambiente.
 
@@ -71,7 +71,7 @@ A execução é controlada via parâmetro:
 
 ---
 
-## ▶️ Execução dos Testes
+## Execução dos Testes
 
 ### Executar todos os testes
 
@@ -88,9 +88,9 @@ mvn test -Dgroups=contract -Denv=prod
 
 ---
 
-## 📊 Cobertura de Testes
+## Cobertura de Testes
 
-### ✔️ Testes Funcionais
+### Testes Funcionais
 
 Endpoints cobertos:
 
@@ -117,40 +117,40 @@ Endpoints cobertos:
 
 ---
 
-### ✔️ Testes de Contrato
+### Testes de Contrato
 
 * Validação de schema JSON para todos os endpoints
 * Garantia de consistência estrutural das respostas
 
 ---
 
-## 🧪 Estratégia de Testes
+## Estratégia de Testes
 
 O projeto foi construído com base nos seguintes princípios:
 
-### 🔹 Separação de responsabilidades
+### Separação de responsabilidades
 
 * Camada `client` abstrai chamadas HTTP
 * `specifications` centralizam validações comuns
 * Testes focam apenas em validações
 
-### 🔹 Reutilização
+### Reutilização
 
 * Request/Response specs reutilizáveis
 * Configuração centralizada via singleton (`ConfigManager`)
 
-### 🔹 Legibilidade
+### Legibilidade
 
 * Uso de assertions fluentes com `.body()`
 * Nomes de testes descritivos
 
-### 🔹 Estabilidade
+### Estabilidade
 
 * Evita testes frágeis (ex: validações de aleatoriedade não determinísticas)
 
 ---
 
-## 📈 Relatórios
+## Relatórios
 
 O projeto utiliza Allure para geração de relatórios.
 
@@ -176,9 +176,9 @@ allure serve target/allure-results
 
 ---
 
-## 🚀 Decisões Técnicas
+## Decisões Técnicas
 
-### ✔️ Request/Response Specifications
+### Request/Response Specifications
 
 Centralização de:
 
@@ -188,14 +188,14 @@ Centralização de:
 
 ---
 
-### ✔️ ConfigManager (Singleton)
+### ConfigManager (Singleton)
 
 * Gerenciamento centralizado de propriedades
 * Suporte a múltiplos ambientes
 
 ---
 
-### ✔️ Camada de Client
+### Camada de Client
 
 * Encapsula endpoints da API
 * Reduz duplicação
@@ -203,7 +203,7 @@ Centralização de:
 
 ---
 
-### ✔️ Integração com Allure
+### Integração com Allure
 
 * Logs completos de request/response
 * Melhor rastreabilidade e debugging
