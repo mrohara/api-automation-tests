@@ -36,13 +36,13 @@ jobs:
           java-version: 17
           cache: maven
 
-      - name: Executar testes
-        run: mvn clean test -Dgroups=${{ github.event.inputs.test_group }} -Denv=${{ github.event.inputs.environment }}
-
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Executar testes
+        run: mvn clean test -Dgroups=${{ github.event.inputs.test_group }} -Denv=${{ github.event.inputs.environment }}
 
       - name: Instalar Allure CLI
         if: always()
@@ -58,4 +58,12 @@ jobs:
         with:
           name: allure-report
           path: target/allure-report
+          retention-days: 7
+
+      - name: Publicar Allure Results como artefato
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: target/allure-results
           retention-days: 7

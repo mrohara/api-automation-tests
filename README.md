@@ -98,13 +98,35 @@ O projeto possui uma pipeline manual no GitHub Actions para facilitar a execuç�
     - grupo de testes (`functional` ou `contract`)
 
 ### Artefato gerado
+Ao final da execução, dois artefatos ficam disponíveis para download:
+
+allure-report
+allure-results
+Como visualizar o relatório
+- Opção 1: usar o allure-report
+
+Após baixar e descompactar o artefato allure-report, execute um servidor local simples na pasta do relatório.
+
+Exemplo com Python:
+
+cd allure-report
+python3 -m http.server 8080
+
+Depois acesse no navegador:
+http://localhost:8080
+
+- Opção 2: usar o allure-results
+
+Caso prefira gerar o relatório localmente, baixe o artefato allure-results e execute:
+
+allure serve allure-results(Mais detalhes na próxima sessão -> **Relatórios(Execução Local)**)
 Ao final da execução, o artefato `allure-report` ficará disponível para download.
 
 Após baixar e descompactar, abra o arquivo `index.html` para visualizar o relatório.
 
 ---
 
-## Relatórios
+## Relatórios(Execução Local)
 
 O projeto utiliza Allure para geração de relatórios.
 
