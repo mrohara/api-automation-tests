@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["message", "status"],
+  "properties": {
+    "message": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": "Mapa de raças para sub-raças (arrays de strings, podendo ser vazios)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success"],
+      "description": "Status da resposta da API"
+    }
+  },
+  "additionalProperties": false
+}
