@@ -85,6 +85,46 @@ mvn clean test -Denv=prod
 mvn test -Dgroups=functional -Denv=prod
 mvn test -Dgroups=contract -Denv=prod
 ```
+## Execução via GitHub Actions
+
+O projeto possui uma pipeline manual no GitHub Actions para facilitar a execução dos testes.
+
+### Como executar
+1. Acesse a aba **Actions** no GitHub
+2. Selecione a workflow **API Tests**
+3. Clique em **Run workflow**
+4. Escolha:
+    - ambiente (`dev`, `stage` ou `prod`)
+    - grupo de testes (`functional` ou `contract`)
+
+### Artefato gerado
+Ao final da execução, o artefato `allure-report` ficará disponível para download.
+
+Após baixar e descompactar, abra o arquivo `index.html` para visualizar o relatório.
+
+---
+
+## Relatórios
+
+O projeto utiliza Allure para geração de relatórios.
+
+1 - Instalar o Allure CLI
+
+No Mac/Linux com Homebrew:
+```
+brew install allure
+```
+No Linux:
+```
+sudo apt install allure
+```
+Ou baixar:
+https://docs.qameta.io/allure/
+
+2 - Gerar o report
+```bash
+allure serve target/allure-results
+```
 
 ---
 
@@ -147,32 +187,6 @@ O projeto foi construído com base nos seguintes princípios:
 ### Estabilidade
 
 * Evita testes frágeis (ex: validações de aleatoriedade não determinísticas)
-
----
-
-## Relatórios
-
-O projeto utiliza Allure para geração de relatórios.
-
-### Relatório
-
-1 - Instalar o Allure CLI
-
-No Mac/Linux com Homebrew:
-```
-brew install allure
-```
-No Linux:
-```
-sudo apt install allure
-```
-Ou baixar:
-https://docs.qameta.io/allure/
-
-2 - Gerar o report
-```bash
-allure serve target/allure-results
-```
 
 ---
 
